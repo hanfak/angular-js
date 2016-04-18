@@ -12,7 +12,9 @@ toDoApp.controller('ToDoController', function() {
     this.newToDo = '';
   };
 
-  toDolist.removeToDo = function (){
-    toDolist
+  toDoList.removeToDo = function (){
+    toDoList.toDos.pop();
+    // index = toDoList.toDos.indexOf(toDoList.toDos);
+    // toDoList.toDos.splice(index, 1);
   };
 });
