@@ -12,12 +12,7 @@
     <div ng-controller="ToDoController as controller">
       <ul >
         <li ng-repeat='toDo in controller.toDos'>
-          <label class='checkbox'>
-            <input type='checkbox' ng-model='checked' ng-init='checked'>
-            <!-- <span class='completed-{{ !toDo.completed }}'> {{ toDo.completed }} completed</span> -->
-            {{ toDo.text }}<span ng-if='checked==false'> not</span> completed
-            <!-- <span class='completed-{{ toDo.completed }}'> completed</span> -->
-          </label>
+          {{ toDo.text }}: {{ toDo.completed ? "completed" : "not completed" }}
         </li>
       </ul>
     </div>
