@@ -1,9 +1,18 @@
 toDoApp.controller('ToDoController', function() {
+  var toDoList = this;
 
-    this.toDos = [
+  toDoList.toDos = [
     {text: 'ToDo1', completed: false},
     {text: 'ToDo2', completed: true},
     {text: 'ToDo3', completed: false},
   ];
-  // this.toDo = ['ToDo1', 'ToDo2', 'Todo3'];
+
+  toDoList.addToDo = function() {
+    toDoList.toDos.push({text: this.newToDo, completed: false});
+    this.newToDo = '';
+  };
+
+  toDolist.removeToDo = function (){
+    toDolist
+  };
 });

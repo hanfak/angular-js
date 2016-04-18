@@ -9,12 +9,13 @@
   </head>
 
   <body>
-    <div ng-controller="ToDoController as controller">
-      <ul >
-        <li ng-repeat='toDo in controller.toDos'>
+    <div ng-controller="ToDoController as list">
+      <p ng-repeat='toDo in list.toDos'>
           {{ toDo.text }}: {{ toDo.completed ? "completed" : "not completed" }}
-        </li>
-      </ul>
+      </p>
+      <input type='text' ng-model='list.newToDo' placeholder="next thing on the list">
+      <button ng-click='list.addToDo();'>Add</button>
+
     </div>
   </body>
 </html>
