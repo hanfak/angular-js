@@ -1,20 +1,14 @@
-toDoApp.controller('ToDoController', function() {
-  var toDoList = this;
+toDoApp.controller('ToDoController', ['ToDoFactory', function(ToDoFactory) {
 
-  toDoList.toDos = [
-    {text: 'ToDo1', completed: false},
-    {text: 'ToDo2', completed: true},
-    {text: 'ToDo3', completed: false},
-  ];
+  var self = this;
 
-  toDoList.addToDo = function() {
-    toDoList.toDos.push({text: this.newToDo, completed: false});
-    this.newToDo = '';
+  self.todos = [];
+
+  self.addToDo = function(todoText) {
+    self.todos.push(new ToDoFactory(todoText));
   };
 
-  toDoList.removeToDo = function (){
-    toDoList.toDos.pop();
-    // index = toDoList.toDos.indexOf(toDoList.toDos);
-    // toDoList.toDos.splice(index, 1);
+  self.removeToDo = function() {
+    self.todos.pop();
   };
-});
+}]);
